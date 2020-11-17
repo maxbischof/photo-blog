@@ -7,7 +7,6 @@ export default function Post(props) {
   const [showDescription, setShowDescription] = useState(false)
 
   function onTouch() {
-    console.log('click')
     setShowDescription(!showDescription)
   }
 
@@ -25,7 +24,7 @@ export default function Post(props) {
 const Description = styled.div`
   ${(props) => !props.isTransperent && 'opacity: 0%;'}
   position: absolute;
-  bottom: 0%;
+  bottom: 0;
   color: white;
   transition: all 0.5s;
   background: linear-gradient(
@@ -47,4 +46,5 @@ const PostContainer = styled.div`
 
 const Image = styled.img`
   width: 100vw;
+  display: block;
 `
