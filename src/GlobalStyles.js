@@ -2,13 +2,14 @@ import { createGlobalStyle } from 'styled-components'
 
 export default createGlobalStyle`
     :root {
-        --background: #2F2F2F;
-        --text: #FEFEFE;
+        --background: white;
+        --text: #2F2F2F;
         
     }
 
     html {
         box-sizing: border-box;
+        margin: 0;
     }
 
     body {
