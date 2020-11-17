@@ -9,5 +9,6 @@ export default createGlobalStyle`
     body {
         background: var(--background);
         font-family: 'Montserrat', sans-serif;
+        color: var(--text);
     }
 `
