@@ -1,5 +1,11 @@
+import WelcomeSection from './components/WelcomeSection'
+
 function App() {
-  return <div className="App"></div>
+  return (
+    <div className="App">
+      <WelcomeSection />
+    </div>
+  )
 }
 
 export default App
