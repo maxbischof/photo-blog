@@ -1,25 +1,20 @@
 import WelcomeSection from './components/WelcomeSection'
 import Post from './components/Post'
+import { usePosts } from './hooks/contentful'
 
 function App() {
-  const posts = [
-    {
-      titel: 'Herbsttour nach Stade',
-      subtitel:
-        '70 km von Hamburg nach Stade und zurück. Mit der Linie 61 über die Elbe nach Waltershof. Nach Moorborg folgt einer schöner Abschnitt durch die Obsplantagen. Danach geht es immer am Deich entlang bis Stade.',
-      url: 'https://source.unsplash.com/random/800',
-    },
-    {
-      titel: 'Lunch Ride',
-      url: 'https://source.unsplash.com/random/800',
-    },
-  ]
+  const posts = usePosts()
 
   return (
     <div className="App">
       <WelcomeSection />
-      {posts.map((post) => (
-        <Post {...post} key={post.titel} />
+      {posts?.map((post) => (
+        <Post
+          key={post.sys.id}
+          title={post.fields.title}
+          subtitle={post.fields.article}
+          images={post.fields.images}
+        />
       ))}
     </div>
   )

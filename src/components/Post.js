@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-export default function Post(props) {
-  const { titel, subtitel, url } = props
-
+export default function Post({ title, images, subtitle }) {
   const [showDescription, setShowDescription] = useState(false)
 
   function onTouch() {
@@ -13,10 +11,10 @@ export default function Post(props) {
   return (
     <PostContainer onTouchStart={onTouch}>
       <Description isTransperent={showDescription}>
-        <h2>{titel}</h2>
-        <p>{subtitel}</p>
+        <h2>{title}</h2>
+        <p>{subtitle}</p>
       </Description>
-      <Image src={url} alt={titel} />
+      <Image src={images[0].fields.file.url} alt={images[0].fields.title} />
     </PostContainer>
   )
 }
